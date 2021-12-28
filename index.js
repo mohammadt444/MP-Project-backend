@@ -1,5 +1,7 @@
-const express = require("express");
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import express from "express";
+
+import router from "./src/routes/index.js";
 
 const app = express();
 
@@ -14,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 // API routes
-app.use("/api", require("./src/routes"));
+app.use("/api", router);
 
 mongoose.connect("mongodb://localhost:27017/MP", () =>
   console.log("> mongoDB connected successfully")

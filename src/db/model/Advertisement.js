@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+import { Schema, model } from "mongoose";
 
-const AdvertisementSchema = mongoose.Schema({
+const AdvertisementSchema = Schema({
   bookId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "Book",
     required: true,
   },
@@ -13,4 +13,4 @@ const AdvertisementSchema = mongoose.Schema({
   phoneNumber: String,
 });
 
-export default mongoose.model("Advertisement", AdvertisementSchema);
+export default model("Advertisement", AdvertisementSchema);
