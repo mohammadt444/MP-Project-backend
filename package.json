@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node index.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,12 @@
   "type": "module",
   "dependencies": {
     "express": "^4.17.2",
-    "mongoose": "^6.1.4"
+    "mongoose": "^6.1.4",
+    "ramda": "^0.27.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/node": "^7.16.5",
+    "@babel/preset-env": "^7.16.5"
   }
 }
