@@ -13,4 +13,4 @@ const AdvertisementSchema = mongoose.Schema({
   phoneNumber: String,
 });
 
-export default mongoose.model("Advertisements", AdvertisementSchema);
+export default mongoose.model("Advertisement", AdvertisementSchema);
