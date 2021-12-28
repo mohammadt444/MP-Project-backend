@@ -1,4 +1,5 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
+const { model, Schema } = mongoose;
 
 const BookSchema = Schema({
   title: String,
@@ -8,4 +9,12 @@ const BookSchema = Schema({
   summery: String,
 });
 
-export default model("Book", BookSchema);
+const Book = model("Book", BookSchema);
+export default Book;
+
+export const findBookById = (_id) => Book.findById(_id).exec();
+
+export const addBook = ({ title, author, publisher, category, summery }) =>
+  new Book({ title, author, publisher, category, summery }).save();
+
+export const getBooks = () => Book.find().exec();
