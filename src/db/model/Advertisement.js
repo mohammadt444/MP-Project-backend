@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 
 const AdvertisementSchema = mongoose.Schema({
-  bookId: String,
+  bookId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Book",
+    required: true,
+  },
   imageUrl: String,
   price: Number,
   city: String,
