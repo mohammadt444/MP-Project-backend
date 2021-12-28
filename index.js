@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 
 const app = express();
 
@@ -14,5 +15,9 @@ app.get("/", (req, res) => {
 
 // API routes
 app.use("/api", require("./src/routes"));
+
+mongoose.connect("mongodb://localhost:27017/MP", () =>
+  console.log("> mongoDB connected successfully")
+);
 
 app.listen(PORT, () => console.log(`> server started on port ${PORT}`));
