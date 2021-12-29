@@ -1,7 +1,7 @@
 import {
   findAdvertisementByBookId,
   getAdvertisements,
-} from "../db/model/Advertisement";
+} from "../db/model/Advertisement.js";
 
 export default (req, res) => {
   const { id: BookId } = req.body;

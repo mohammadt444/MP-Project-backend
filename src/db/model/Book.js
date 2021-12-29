@@ -10,7 +10,6 @@ const BookSchema = Schema({
 });
 
 const Book = model("Book", BookSchema);
-export default Book;
 
 export const findBookById = (_id) => Book.findById(_id).exec();
 
@@ -18,3 +17,5 @@ export const addBook = ({ title, author, publisher, category, summery }) =>
   new Book({ title, author, publisher, category, summery }).save();
 
 export const getBooks = () => Book.find().exec();
+
+export default Book;
