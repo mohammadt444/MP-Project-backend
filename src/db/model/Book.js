@@ -12,7 +12,6 @@ const BookSchema = Schema({
 const Book = model("Book", BookSchema);
 
 export const findBookById = (_id) => Book.findById(_id).exec();
-
 export const addBook = ({ title, author, publisher, category, summery }) =>
   new Book({ title, author, publisher, category, summery }).save();
 

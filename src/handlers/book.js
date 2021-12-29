@@ -1,8 +1,8 @@
-import { addBook } from "../db/model/Book.js";
+import { addBook, findBookById } from "../db/model/Book.js";
 
 const keys = ["title", "author", "publisher", "category", "summery"];
 
-export default (req, res) => {
+export const addBookHandler = (req, res) => {
   const data = { ...req.body };
   const isComplete = keys.reduce((pre, val) => pre && !!data[val], true);
   if (isComplete) {
@@ -10,4 +10,9 @@ export default (req, res) => {
   } else {
     res.status(400).json({ result: "failed" });
   }
+};
+
+export const getBookHandler = (req, res) => {
+  const { id } = req.body;
+  findBookById(id).then((data) => res.json(data));
 };

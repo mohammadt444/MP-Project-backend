@@ -1,20 +1,26 @@
 import express from "express";
 
-import bookHandler from "../handlers/book.js";
+import { addBookHandler, getBookHandler } from "../handlers/book.js";
 import booksHandler from "../handlers/books.js";
 import bookTitlesHandler from "../handlers/bookTitles.js";
-import advertisementsHandler from "../handlers/advertisments.js";
-import advertisementHandler from "../handlers/advertisment.js";
+import advertisementsHandler from "../handlers/advertisements.js";
+import {
+  addAdvertisementHandler,
+  getAdvertisementHandler,
+} from "../handlers/advertisement.js";
 
 const router = express.Router();
 
 router.get("/advertisements", advertisementsHandler);
 
-router.post("/advertisement", advertisementHandler);
+router.post("/advertisement", addAdvertisementHandler);
+router.get("/advertisement", getAdvertisementHandler);
 
-router.get("/book", bookHandler);
+router.get("/book", getBookHandler);
 
-router.post("/books", booksHandler);
+router.post("/book", addBookHandler);
+
+router.get("/books", booksHandler);
 
 router.get("/bookTitles", bookTitlesHandler);
 
