@@ -1,6 +1,6 @@
 import { addBook, findBookById } from "../db/model/Book.js";
 
-const keys = ["title", "author", "publisher", "category", "summery"];
+const keys = ["title", "author", "publisher", "category", "summary"];
 
 export const addBookHandler = (req, res) => {
   const data = { ...req.body };

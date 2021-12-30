@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { findBookById } from "./Book.js";
 const { model, Schema } = mongoose;
 
 const AdvertisementSchema = Schema({
@@ -7,17 +8,22 @@ const AdvertisementSchema = Schema({
     ref: "Book",
     required: true,
   },
+  title: String,
   imageUrl: String,
   price: Number,
   city: String,
   description: String,
   phoneNumber: String,
+  time: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 const Advertisement = model("Advertisement", AdvertisementSchema);
 
 export const findAdvertisementByBookId = (bookId) =>
-  Advertisement.findOne({ bookId }).exec();
+  Advertisement.find({ bookId }).exec();
 
 export const addAdvertisement = ({
   bookId,
@@ -27,14 +33,17 @@ export const addAdvertisement = ({
   description,
   phoneNumber,
 }) =>
-  new Advertisement({
-    bookId,
-    imageUrl,
-    price,
-    city,
-    description,
-    phoneNumber,
-  }).save();
+  findBookById(bookId).then((book) =>
+    new Advertisement({
+      title: book.title,
+      bookId,
+      imageUrl,
+      price,
+      city,
+      description,
+      phoneNumber,
+    }).save()
+  );
 
 export const getAdvertisements = () => Advertisement.find().exec();
 

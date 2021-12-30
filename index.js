@@ -18,8 +18,13 @@ app.get("/", (req, res) => {
 // API routes
 app.use("/api", router);
 
-mongoose.connect("mongodb://localhost:27017/MP", () =>
-  console.log("> mongoDB connected successfully")
+// mongoose.connect("mongodb://localhost:27017/MP", () =>
+mongoose.connect(
+  "mongodb://ujgaugaafdxstojqc6fw:bpnES8Rn27WbKVbh2YKc@b8ndawvsrdebxft-mongodb.services.clever-cloud.com:27017/b8ndawvsrdebxft",
+  () => console.log("> mongoDB connected successfully")
 );
 
 app.listen(PORT, () => console.log(`> server started on port ${PORT}`));
+
+// "build": "babel index.js -d dist",
+//
