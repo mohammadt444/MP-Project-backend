@@ -1,4 +1,3 @@
-import { addBook, findBookById } from "../db/model/Book.js";
 import { addComment, findCommentByBookId } from "../db/model/Comment.js";
 
 export const getCommentHandler = (req, res) => {
