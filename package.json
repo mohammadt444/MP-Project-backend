@@ -23,7 +23,7 @@
     "@babel/preset-env": "^7.16.5"
   },
   "engines": {
-    "node": "14.17.5"
+    "node": "14.x"
   }
 }
 
