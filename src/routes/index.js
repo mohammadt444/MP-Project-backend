@@ -11,6 +11,7 @@ import {
 
 import loginHandler from "../handlers/login.js";
 import signupHandler from "../handlers/signup.js";
+import { addCommentHandler, getCommentHandler } from "../handlers/comment.js";
 
 const router = express.Router();
 
@@ -31,5 +32,9 @@ router.get("/bookTitles", bookTitlesHandler);
 router.get("/login", loginHandler);
 
 router.post("/signup", signupHandler);
+
+router.get("/comment", getCommentHandler);
+
+router.post("/comment", addCommentHandler);
 
 export default router;
