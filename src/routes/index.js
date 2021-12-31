@@ -12,6 +12,10 @@ import {
 import loginHandler from "../handlers/login.js";
 import signupHandler from "../handlers/signup.js";
 import { addCommentHandler, getCommentHandler } from "../handlers/comment.js";
+import {
+  fileUploadHandler,
+  fileUploadMiddleware,
+} from "../handlers/imageUpload.js";
 
 const router = express.Router();
 
@@ -36,5 +40,7 @@ router.post("/signup", signupHandler);
 router.get("/comment", getCommentHandler);
 
 router.post("/comment", addCommentHandler);
+
+router.post("/imageUpload", fileUploadMiddleware, fileUploadHandler);
 
 export default router;
