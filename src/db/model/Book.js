@@ -7,6 +7,7 @@ const BookSchema = Schema({
   publisher: String,
   category: String,
   summary: String,
+  imageUrl: String,
 });
 
 const Book = model("Book", BookSchema);
