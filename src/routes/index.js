@@ -8,7 +8,6 @@ import {
   addAdvertisementHandler,
   getAdvertisementHandler,
 } from "../handlers/advertisement.js";
-
 import loginHandler from "../handlers/login.js";
 import signupHandler from "../handlers/signup.js";
 import { addCommentHandler, getCommentHandler } from "../handlers/comment.js";
