@@ -16,6 +16,7 @@ import {
   fileUploadHandler,
   fileUploadMiddleware,
 } from "../handlers/imageUpload.js";
+import imageHandler from "../handlers/image.js";
 
 const router = express.Router();
 
@@ -42,5 +43,7 @@ router.get("/comment", getCommentHandler);
 router.post("/comment", addCommentHandler);
 
 router.post("/imageUpload", fileUploadMiddleware, fileUploadHandler);
+
+router.use("/image", imageHandler);
 
 export default router;

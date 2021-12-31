@@ -16,6 +16,6 @@ export const fileUploadMiddleware = multer({
 export const fileUploadHandler = (req, res) => {
   res.json({
     result: "done",
-    iamgeUrl: req.file.filename,
+    iamgeUrl: `/image/${req.file.filename}`,
   });
 };
