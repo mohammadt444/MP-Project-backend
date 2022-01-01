@@ -25,7 +25,7 @@ router.post("/advertisement", addAdvertisementHandler);
 
 router.get("/advertisement", getAdvertisementHandler);
 
-router.get("/book", getBookHandler);
+router.post("/bookGet", getBookHandler);
 
 router.post("/book", addBookHandler);
 
