@@ -23,7 +23,7 @@ router.get("/advertisements", advertisementsHandler);
 
 router.post("/advertisement", addAdvertisementHandler);
 
-router.get("/advertisement", getAdvertisementHandler);
+router.post("/advertisementGet", getAdvertisementHandler);
 
 router.post("/bookGet", getBookHandler);
 
